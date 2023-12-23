@@ -1,12 +1,11 @@
 import React from "react";
-import { Footer, Navbar } from "./components";
-
+import { Layout } from "./components";
+import { ThemeProvider, useThemeContext } from "./context/themeContext";
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Footer />
-    </>
+    <ThemeProvider>
+      <Layout />
+    </ThemeProvider>
   );
 };
 
