@@ -1,29 +1,24 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-
+import FacebookIcon from "@mui/icons-material/Facebook";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import heroImg from "../assets/hero.jpeg";
 const Herosection = () => {
   return (
-    <div className="h-screen">
+    <div className="relative bg-effect py-[5rem]">
       <div className="max-w-[1200px] mx-auto h-full">
         <div class="h-full grid grid-cols-2">
-          <div className=" flex flex-col gap-y-5 items-center justify-center">
-            <p className="text-3xl">
-              Hi, I m
-              <span className="text-5xl font-[700] text-green-400">
+          <div className=" flex items-start flex-col gap-y-5 justify-center">
+            <p className="text-5xl flex flex-col gap-y-2">
+              <span className="head">Hi, I m</span>
+              <span className="text-5xl font-[700] text-green-400 head1">
                 Devankit Sahu
-                {/* <Typewriter
-                  words={["Devankit Sahu"]}
-                  loop={0}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={100}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                  cursorBlinking={false}
-                /> */}
               </span>
             </p>
+
             <p className="text-4xl">
               I m a{" "}
               <span className="text-5xl font-[700] text-red-400">
@@ -43,13 +38,43 @@ const Herosection = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
               qui.
             </p>
-            <Button variant="outlined" sx={{ borderRadius: "25px" }}>
-              Hire me
+            <Button
+              sx={{
+                borderRadius: "25px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                background:
+                  "linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%)",
+                padding: "10px 20px",
+              }}
+            >
+              Contact me
             </Button>
           </div>
 
-          <div className=""></div>
+          <div className="flex justify-center">
+            <img src={heroImg} alt="" className="w-[30vw] h-[60vh] object-cover rounded-[25px]" />
+          </div>
         </div>
+      </div>
+      <div className="absolute bottom-0 left-[50%] translate-x-[-50%]">
+        <ul className="flex gap-x-3">
+          <span className="f">Follow me </span>
+          <li className="cursor-pointer">
+            <FacebookIcon />
+          </li>
+          <li className="cursor-pointer">
+            <GitHubIcon />
+          </li>
+          <li className="cursor-pointer">
+            <LinkedInIcon />
+          </li>
+          <li className="cursor-pointer">
+            <TwitterIcon />
+          </li>
+        </ul>
       </div>
     </div>
   );

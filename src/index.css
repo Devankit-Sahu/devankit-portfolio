@@ -2,9 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+/* @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500&family=Cedarville+Cursive&display=swap');
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: rgb(12, 11, 11); */
+}
+.head{
+  font-family: 'Cedarville Cursive', cursive;
+}
+.head1{
+  font-family: 'Brygada 1918', serif;
+} */
+body {
+  color: #fff;
+  background-color: #060417;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.bg-effect::before,
+.bg-effect::after {
+  content: "";
+  width: 28.125rem;
+  height: 28.125rem;
+  border-radius: 28.125rem;
+  background: #7c66e3;
+  z-index: -1;
+  position: absolute;
+}
+
+.bg-effect::after {
+  filter: blur(220px);
+  top: -3rem;
+  left: -5rem;
+}
+.bg-effect::before {
+  filter: blur(220px);
+  bottom: 2rem;
+  right: 0;
 }

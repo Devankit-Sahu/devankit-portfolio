@@ -1,11 +1,13 @@
 import React from "react";
-import { Layout } from "./components";
-import { ThemeProvider, useThemeContext } from "./context/themeContext";
+import { Footer, Herosection, Navbar } from "./components";
+import "./index.css";
 const App = () => {
   return (
-    <ThemeProvider>
-      <Layout />
-    </ThemeProvider>
+    <>
+      <Navbar />
+      <Herosection />
+      {/* <Footer /> */}
+    </>
   );
 };
 
