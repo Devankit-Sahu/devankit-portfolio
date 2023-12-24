@@ -8,20 +8,20 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import heroImg from "../assets/hero.jpeg";
 const Herosection = () => {
   return (
-    <div className="relative bg-effect py-[5rem]">
+    <div className="relative  bg-effect py-[5rem] px-[5rem] lg:px-10" id="home">
       <div className="max-w-[1200px] mx-auto h-full">
-        <div class="h-full grid grid-cols-2">
+        <div className="h-full grid grid-cols-1 gap-y-10 md:grid-cols-2">
           <div className=" flex items-start flex-col gap-y-5 justify-center">
-            <p className="text-5xl flex flex-col gap-y-2">
+            <p className="text-5xl md:text-4xl lg:text-5xl flex flex-col gap-y-2">
               <span className="head">Hi, I m</span>
-              <span className="text-5xl font-[700] text-green-400 head1">
+              <span className="md:text-4xl lg:text-5xl font-[700] text-green-400 head1">
                 Devankit Sahu
               </span>
             </p>
 
-            <p className="text-4xl">
+            <p className=" text-[1.5rem] lg:text-3xl">
               I m a{" "}
-              <span className="text-5xl font-[700] text-red-400">
+              <span className="text-[1.6rem] lg:text-4xl font-[700] text-red-400">
                 <Typewriter
                   words={["Full Stack Developer"]}
                   loop={0}
@@ -50,28 +50,31 @@ const Herosection = () => {
                 padding: "10px 20px",
               }}
             >
-              Contact me
+              About me
             </Button>
           </div>
 
-          <div className="flex justify-center">
-            <img src={heroImg} alt="" className="w-[30vw] h-[60vh] object-cover rounded-[25px]" />
+          <div className="flex justify-center order-first md:order-last">
+            <img
+              src={heroImg}
+              alt=""
+              className="w-[400px] h-[400px] md:w-[30vw] md:h-[60vh] object-cover rounded-full md:rounded-[25px]"
+            />
           </div>
         </div>
       </div>
       <div className="absolute bottom-0 left-[50%] translate-x-[-50%]">
         <ul className="flex gap-x-3">
-          <span className="f">Follow me </span>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer border p-2 rounded-full border-[#7e61e7]">
             <FacebookIcon />
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer border p-2 rounded-full border-[#7e61e7]">
             <GitHubIcon />
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer border p-2 rounded-full border-[#7e61e7]">
             <LinkedInIcon />
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer border p-2 rounded-full border-[#7e61e7]">
             <TwitterIcon />
           </li>
         </ul>

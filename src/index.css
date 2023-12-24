@@ -44,8 +44,13 @@ body {
   top: -3rem;
   left: -5rem;
 }
+
 .bg-effect::before {
   filter: blur(220px);
   bottom: 2rem;
   right: 0;
+}
+
+.sidebar{
+  background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
 }
