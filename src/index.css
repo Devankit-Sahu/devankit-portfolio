@@ -54,3 +54,7 @@ body {
 .sidebar{
   background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
 }
+.bg-overlay{
+  /* filter: blur(10px); */
+  /* box-shadow: 0 0 20px rgba(0,0,0,0.2), 10px 0 5px rgba(2,2,4,.2),10px 0 5px rgba(2,2,4,.2); */
+}
