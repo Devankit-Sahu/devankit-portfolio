@@ -2,59 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500&family=Cedarville+Cursive&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.head{
-  font-family: 'Cedarville Cursive', cursive;
-}
-.head1{
-  font-family: 'Brygada 1918', serif;
-} */
+
+html,
 body {
-  color: #fff;
-  background-color: #060417;
+  width: 100%;
+  height: 100%;
 }
 
-.menu-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
-  border-radius: 50%;
-  padding: 8px;
-}
-
-.bg-effect::before,
-.bg-effect::after {
-  content: "";
-  width: 28.125rem;
-  height: 28.125rem;
-  border-radius: 28.125rem;
-  background: #7c66e3;
-  z-index: -1;
+.line1 {
+  display: inline-block;
+  width: 1px;
+  height: 160px;
+  background-image: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.5)
+  );
   position: absolute;
+  left: 19px;
+  bottom: calc(100% + 20px);
 }
 
-.bg-effect::after {
-  filter: blur(220px);
-  top: -3rem;
-  left: -5rem;
+.line1::after,
+.line2::after {
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  left: -2px;
+  transform: translateY(-1px);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.bg-effect::before {
-  filter: blur(220px);
-  bottom: 2rem;
-  right: 0;
-}
-
-.sidebar{
-  background: linear-gradient(90deg, #a993fe -0.13%, #7e61e7 99.87%);
-}
-.bg-overlay{
-  /* filter: blur(10px); */
-  /* box-shadow: 0 0 20px rgba(0,0,0,0.2), 10px 0 5px rgba(2,2,4,.2),10px 0 5px rgba(2,2,4,.2); */
-}
+.line2 {
+  top: calc(100% + 20px);
+  background-image: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.5)
+  );
+  transform: matrix(1, 0, 0, -1, 0, 0);
+} 

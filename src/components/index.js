@@ -1,7 +1,7 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import MagneticEffect from "./MagneticEffect";
+import SocialIcons from "./SocialIcons";
+import ToggleButton from "./ToggleButton";
+import CursorDot from "./CursorDot"
 import Herosection from "./Herosection";
-import SkillsSection from "./SkillsSection";
 
-export { Navbar, Footer, Herosection, SkillsSection };
-
+export { MagneticEffect, SocialIcons, ToggleButton, CursorDot ,Herosection};

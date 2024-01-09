@@ -1,12 +1,20 @@
 import React from "react";
-import { Footer, Herosection, Navbar, SkillsSection } from "./components";
-import "./index.css";
+import {
+  CursorDot,
+  Herosection,
+  SocialIcons,
+  ToggleButton,
+} from "./components";
+
 const App = () => {
   return (
     <>
-        <Navbar />
+      <div className="main">
         <Herosection />
-        <SkillsSection />
+      </div>
+      <SocialIcons />
+      <ToggleButton />
+      <CursorDot />
     </>
   );
 };
