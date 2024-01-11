@@ -1,54 +1,17 @@
-import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import MobileNavbar from "./MobileNavbar";
+import React from "react";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(false);
-  const toggleMenu = () => {
-    setMenu((prev) => !prev);
-  };
   return (
-    <>
-      <MobileNavbar isOpen={menu} toggleMenu={toggleMenu} />
-      <div className="px-[5rem] lg:px-10 bg-[rgba(0,0,0,0.1)] backdrop-filter backdrop-blur-[50px] sticky top-0 z-30">
-        <div className="flex justify-between max-w-[1300px] mx-auto py-6">
-          <div>
-            <h2 className="text-5xl font-[700] tracking-[1.4px]">
-              Devankit<span className="text-[#761dd0]">.</span>
-            </h2>
-          </div>
-          <ul className="flex items-center gap-x-10">
-            <li className="text-xl tracking-[.6px] cursor-pointer text-white hidden lg:block">
-              <a href="#home">Home</a>
-            </li>
-            <li className="text-xl tracking-[.6px] cursor-pointer text-white hidden lg:block">
-              <a href="#skills">Skills</a>
-            </li>
-            <li className="text-xl tracking-[.6px] cursor-pointer text-white hidden lg:block">
-              <a href="#skills">Work</a>{" "}
-            </li>
-            <li className="text-xl tracking-[.6px] cursor-pointer text-white hidden lg:block">
-              About
-            </li>
-            <li className="text-xl tracking-[.6px] cursor-pointer text-white hidden lg:block">
-              Contact
-            </li>
-
-            <li
-              className={`cursor-pointer ${
-                menu
-                  ? "bg-tranparent border-[1px] border-[#7e61e7] rounded-full p-[8px]"
-                  : "menu-btn"
-              } lg:hidden`}
-              onClick={toggleMenu}
-            >
-              {menu ? <CloseIcon /> : <MenuIcon />}
-            </li>
-          </ul>
-        </div>
+    <nav className="absolute left-0 right-0">
+      <div className="container mx-auto 2xl:px-40 py-10 flex justify-between">
+        <h2 className="text-5xl leading-[48px] text-[#4ca7f2]">Devankit</h2>
+        <ul className="flex items-center justify-center gap-5">
+          <li className="text-[1.4vw] leading-[1.4vw] text-white cursor-pointer font-serif tracking-[1.2px]">Home</li>
+          <li className="text-[1.4vw] leading-[1.4vw] text-white cursor-pointer font-serif tracking-[1.2px]">Experience</li>
+          <li className="text-[1.4vw] leading-[1.4vw] text-white cursor-pointer font-serif tracking-[1.2px]">Projects</li>
+        </ul>
       </div>
-    </>
+    </nav>
   );
 };
 

@@ -1,14 +1,9 @@
-import React, { useRef } from "react";
-import MagneticEffect from "./MagneticEffect";
+import React from "react";
+import { MagneticEffect } from "./";
 
 const Herosection = () => {
-  const ref = useRef(null);
-  const MouseEnter = () => {
-     ref.current.style.background = "blue";
-  };
-
   return (
-    <div className="hero-section h-screen relative z-[1] bg-[#0f183e]">
+    <>
       <div
         className="absolute w-full h-full left-0 top-0 opacity-[.2] -z-[1]"
         style={{
@@ -21,30 +16,34 @@ const Herosection = () => {
             <h2 className="text-[1.4vw] font-serif font-[500]">
               👋 Hello, There!
             </h2>
-            <h1 className="text-[3.2vw] font-serif capitalize">
+            <h1 className="text-[4.7vw] font-serif capitalize">
               I'm Devankit Sahu
             </h1>
-            <h1 className="text-[3.2vw] font-serif capitalize">
+            <h1 className="text-[4.6vw] font-serif capitalize">
               Web Developer
             </h1>
-            <p className="text-[.9vw] font-serif">
+            <p className="text-[1.1vw] font-serif">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
               animi quasi vero minima harum natus.
             </p>
-            {/* <MagneticEffect> */}
-              <button
-                ref={ref}
-                onMouseEnter={MouseEnter}
-                className="border-[1px] text-[2vw] border-white w-[10vw] h-[10vw] mt-10 rounded-[50%]"
-              >
-                Get in touch
-              </button>
-            {/* </MagneticEffect> */}
+            <MagneticEffect>
+              <div className="border-[1px] border-white rounded-[50px] p-4 mt-6 cursor-pointer relative z-[1] overflow-hidden download-btn hover:text-black">
+                <h4 className="relative z-10 capitalize font-[600] tracking-[1px]">
+                  Download resume
+                </h4>
+              </div>
+            </MagneticEffect>
           </div>
-          <div></div>
+          <div className="flex items-end justify-center">
+              <img
+                src="hero-img.png"
+                alt=""
+                className="relative left-[15%] bottom-0"
+              />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
