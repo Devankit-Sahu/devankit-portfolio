@@ -28,8 +28,8 @@ const Herosection = () => {
             </p>
             <MagneticEffect>
               <div className="border-[1px] border-white rounded-[50px] p-4 mt-6 cursor-pointer relative z-[1] overflow-hidden download-btn hover:text-black">
-                <h4 className="relative z-10 capitalize font-[600] tracking-[1px]">
-                  Download resume
+                <h4 className="relative z-10 uppercase font-[600] tracking-[1px]">
+                  see work
                 </h4>
               </div>
             </MagneticEffect>
