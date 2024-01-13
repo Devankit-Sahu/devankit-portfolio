@@ -21,7 +21,7 @@ const App = () => {
       <div className="main">
         <div
           id="hero"
-          className="hero-section h-screen relative z-[1] bg-[#0f183e]"
+          className="section hero-section h-screen relative z-[1] bg-[#0f183e]"
         >
           <Navbar />
           <Herosection />
@@ -30,12 +30,12 @@ const App = () => {
         <Skillssection />
         <Projectssection />
       </div>
-      <MagneticEffect>
+      <MagneticEffect bgColor="green">
         <div
           onClick={() => {
             setOpen(true);
           }}
-          className="fixed top-[30px] right-[30px] z-[1] border p-3 rounded-full text-white text-2xl"
+          className="fixed top-[30px] right-[30px] z-[1] border p-3 rounded-full text-white text-2xl block md:hidden"
         >
           <IoIosMenu />
         </div>

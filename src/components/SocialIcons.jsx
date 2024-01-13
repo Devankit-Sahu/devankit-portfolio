@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa6";
 
 const SocialIcons = () => {
   return (
-    <div className="fixed z-[1] left-10 top-1/2 -translate-y-1/2">
+    <div className="fixed z-[1] left-2 md:left-4 top-1/2 -translate-y-1/2">
       <div className="line1"></div>
       <div className="flex flex-col gap-y-5">
         <MagneticEffect bgColor="red">

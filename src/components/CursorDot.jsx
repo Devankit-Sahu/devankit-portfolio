@@ -26,7 +26,7 @@ const CursorDot = () => {
   return (
     <div
       ref={dotRef}
-      className="cursor-dot fixed w-[15px] h-[15px] bg-[rgba(255,255,255,0.3)] rounded-[50%] pointer-events-none z-[9999]"
+      className="cursor-dot fixed w-[15px] h-[15px] bg-[greenyellow] rounded-[50%] pointer-events-none z-[9999]"
     />
   );
 };
