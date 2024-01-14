@@ -39,7 +39,7 @@ const About = () => {
           <div className="flex items-center justify-center">
             <div className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:w-[350px] xl:h-[350px]  border-[10px] border-white">
               <img
-                src="/hero-img.png"
+                src="/hero.jpg"
                 alt=""
                 className="w-full h-full object-cover "
               />

@@ -1,3 +1,10 @@
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaXTwitter,
+  FaInstagram,
+} from "react-icons/fa6";
+
 export const navLinks = [
   {
     linkName: "Home",
@@ -19,13 +26,26 @@ export const navLinks = [
     href: "#projects",
     active: false,
   },
-  {
-    linkName: "Contact",
-    href: "#contact",
-    active: false,
-  },
 ];
 
+export const iconsList = [
+  {
+    icon: FaGithub,
+    bgColor: "red",
+  },
+  {
+    icon: FaLinkedinIn,
+    bgColor: "blue",
+  },
+  {
+    icon: FaXTwitter,
+    bgColor: "green",
+  },
+  {
+    icon: FaInstagram,
+    bgColor: "purple",
+  },
+];
 
 export const skillsAndtoolsObj = [
   {
@@ -84,8 +104,35 @@ export const skillsAndtoolsObj = [
 
 export const projectList = [
   {
-    name: "E-Commerce Project",
+    name: "MERN E-Commerce Application",
     image: "/ecommerce.jpg",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Maxime, magnam?",
+    tech: [
+      {
+        image: "/icons8-javascript.svg",
+        name: "Javascript",
+      },
+      {
+        image: "/icons8-react.svg",
+        name: "ReactJs",
+      },
+      {
+        image: "/icons8-nodejs.svg",
+        name: "NodeJS",
+      },
+      {
+        image: "/icons8-react.svg",
+        name: "ExpressJs",
+      },
+      {
+        image: "/icons8-mongodb.svg",
+        name: "MongoDb",
+      },
+    ],
+  },
+  {
+    name: "MERN Chat Application",
+    image: "/chat.png",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Maxime, magnam?",
     tech: [
       {

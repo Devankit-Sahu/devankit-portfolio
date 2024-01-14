@@ -13,14 +13,23 @@ const Herosection = () => {
       ></div>
       <div className="container px-10 2xl:px-40 mx-auto h-full">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          <div className="flex flex-col items-center xl:items-start justify-center text-white">
+          <div className="flex flex-col items-center xl:items-start justify-center text-white relative">
             <motion.h2
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="text-[20px] md:text-[1.4vw] font-serif font-[500]"
             >
-              👋 Hello, There!
+              <motion.span
+                animate={{
+                  rotate: [0, 30, 0],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                style={{ fontSize: "2em", display: "inline-block" }}
+              >
+                👋
+              </motion.span>
+              Hello, There!
             </motion.h2>
             <motion.h1
               initial={{ opacity: 0, y: -40 }}
@@ -59,20 +68,17 @@ const Herosection = () => {
                 </h4>
               </motion.div>
             </MagneticEffect>
+            <div className="absolute top-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[80px] -z-[10]"></div>
+            <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
           </div>
           <div className="flex items-end md:items-center justify-center order-first md:order-none md:justify-end">
-            <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, ease: "easeIn", delay: 0.3 }}
-              className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] xl:w-[450px] xl:h-[450px] bg-[#edecec] rounded-[10px]"
-            >
+            <div className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] xl:w-[450px] xl:h-[450px] bg-[#edecec] rounded-[10px]">
               <img
-                src="hero-img.png"
+                src="/hero.jpg"
                 alt=""
                 className="w-full h-full object-cover"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
