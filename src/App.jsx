@@ -12,7 +12,6 @@ import {
 } from "./components";
 import { IoIosMenu } from "react-icons/io";
 import MobileNavbar from "./components/MobileNavbar";
-import gsap from "gsap";
 
 const App = () => {
   const [open, setOpen] = useState(false);
