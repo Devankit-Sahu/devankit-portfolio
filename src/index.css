@@ -59,9 +59,14 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgb(161, 225, 65);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 255, 0.774),
+    rgba(128, 0, 128, 0.842)
+  );
   transition: all 0.4s;
 }
+
 .download-btn:hover::after {
   top: 0;
   border-radius: 0;
@@ -78,8 +83,22 @@ body {
 }
 
 .nav-link.active {
-  color: #000000;
-  background-color: white;
-  padding: 7px 10px;
-  border-radius: 25px;
+  color: rgb(255, 255, 0);
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: rgb(0, 187, 255);
+  transform-origin: 0%;
+  z-index: 99999;
+}
+
+.text {
+  -webkit-text-stroke: 2px white;
+  font-weight: 900;
+  color: transparent;
 }

@@ -29,20 +29,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="absolute left-0 right-0">
-      <div className="container mx-auto pl-5 2xl:px-40 py-5 md:py-10 md:flex md:justify-between">
-        <h2 className="text-2xl md:text-5xl text-[yellow] font-[700]">
+    <nav className="absolute left-0 right-0 z-10">
+      <div className="container mx-auto 2xl:px-40 py-5 md:flex md:justify-between md:gap-20 md:items-end">
+        <h2 className="text-2xl md:text-4xl xl:text-5xl tracking-wide text-[yellow] text">
           Devankit
         </h2>
-        <ul className="hidden md:flex md:items-center md:justify-center md:gap-5">
+        <ul className="hidden md:flex md:items-center md:gap-5">
           {navLinks.map((link) => (
-            <li
-              key={link.linkName}
-              className="text-[1.4vw] leading-[1.4vw] text-white cursor-pointer font-serif tracking-[1.2px]"
-            >
+            <li key={link.linkName} className="cursor-pointer">
               <a
-                className={`no-underline nav-link ${
-                  link.active ? "active" : ""
+                className={`no-underline nav-link text-[20px] text-white tracking-[.5px] ${
+                  link.active && "active"
                 }`}
                 href={link.href}
               >

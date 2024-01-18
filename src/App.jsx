@@ -12,11 +12,17 @@ import {
 } from "./components";
 import { IoIosMenu } from "react-icons/io";
 import MobileNavbar from "./components/MobileNavbar";
+import { motion, useScroll } from "framer-motion";
 
 const App = () => {
+  const { scrollYProgress } = useScroll();
   const [open, setOpen] = useState(false);
   return (
     <>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
       <div className="main">
         <div
           id="hero"
@@ -39,18 +45,7 @@ const App = () => {
           <IoIosMenu />
         </div>
       </MagneticEffect>
-      <div
-        className={`${
-          open
-            ? "fixed left-0 top-0 right-0 z-20 h-screen bg-[#00000087]"
-            : "hidden"
-        }`}
-        onClick={() => {
-          setOpen(false);
-        }}
-      >
-        <MobileNavbar />
-      </div>
+      <MobileNavbar open={open} setOpen={setOpen} />
       <SocialIcons />
       <ToggleButton />
       <CursorDot />

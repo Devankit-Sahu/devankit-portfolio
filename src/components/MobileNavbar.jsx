@@ -3,7 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 import MagneticEffect from "./MagneticEffect";
 import { navLinks } from "../constants/constants";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ open, setOpen }) => {
   useEffect(() => {
     const handleNavLinkClick = (event) => {
       event.preventDefault();
@@ -29,9 +29,16 @@ const MobileNavbar = () => {
     };
   }, []);
   return (
-    <div className="ml-0 md:ml-auto pt-5 w-full md:w-[40vw] h-full bg-[black] text-white">
+    <div
+      className={`${
+        open
+          ? "fixed left-0 top-0 right-0 z-20 h-screen bg-[black] text-white"
+          : "hidden"
+      }`}
+      onClick={() => setOpen(false)}
+    >
       <MagneticEffect>
-        <div className="w-[40px] h-[40px] border border-white flex items-center justify-center cursor-pointer ml-auto mr-5 rounded-full">
+        <div className="w-[40px] h-[40px] border border-white flex items-center justify-center cursor-pointer ml-auto mt-5 mr-5 rounded-full">
           <RxCross2 />
         </div>
       </MagneticEffect>
@@ -39,11 +46,13 @@ const MobileNavbar = () => {
         {navLinks.map((link) => (
           <li
             key={link.linkName}
-            className="text-[20px] md:text-[2vw] leading-[2vw] cursor-pointer w-[60%] text-center py-3 rounded-[50px] "
+            className="cursor-pointer w-[60%] text-center py-3 rounded-[50px] "
           >
             <a
               href={link.href}
-              className={`no-underline nav-link ${link.active ? "active" : ""}`}
+              className={`no-underline nav-link text-[20px] md:text-[30px] ${
+                link.active ? "active" : ""
+              }`}
             >
               {link.linkName}
             </a>

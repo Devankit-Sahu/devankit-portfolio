@@ -1,6 +1,5 @@
 import React from "react";
 import { MagneticEffect } from "./";
-import { motion } from "framer-motion";
 
 const Herosection = () => {
   return (
@@ -12,75 +11,40 @@ const Herosection = () => {
         }}
       ></div>
       <div className="container px-10 2xl:px-40 mx-auto h-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          <div className="flex flex-col items-center xl:items-start justify-center text-white relative">
-            <motion.h2
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="text-[20px] md:text-[1.4vw] font-serif font-[500]"
-            >
-              <motion.span
-                animate={{
-                  rotate: [0, 30, 0],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                style={{ fontSize: "2em", display: "inline-block" }}
-              >
-                👋
-              </motion.span>
-              Hello, There!
-            </motion.h2>
-            <motion.h1
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.5 }}
-              className="text-[28px] md:text-[4.7vw] font-serif capitalize"
-            >
-              I'm <span className="text-[red]">Devankit Sahu</span>
-            </motion.h1>
-            <motion.h1
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.7 }}
-              className="text-[28px] md:text-[4.6vw] font-serif capitalize"
-            >
-              Web Developer
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.9 }}
-              className="text-[12px] ml-10 mr-10 md:ml-0 md:mr-0 text-center xl:text-start md:text-[1.1vw] font-serif"
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-              animi quasi vero minima harum natus.
-            </motion.p>
+        <div className="h-full flex flex-col items-center justify-center text-white">
+          <h2 className="text-[20px] mb-4">
+            👋, my name is{" "}
+            <span className="text-[red] font-bolder">Devankit Sahu</span>
+          </h2>
+          <h1 className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black capitalize">
+            web
+          </h1>
+          <h1 className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black text capitalize">
+            Developer
+          </h1>
+          <p className="mt-5 text-[10px] md:text-[15px]">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+            sequi!
+          </p>
+          <div className="flex justify-center gap-20 mt-5 w-full">
+            <div className="border-[1px] border-white rounded-[50px] p-4 cursor-pointer relative z-[1] overflow-hidden download-btn">
+              <h4 className="relative z-10 uppercase text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
+                Download resume
+              </h4>
+            </div>
             <MagneticEffect>
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut", delay: 1 }}
-                className="border-[1px] border-white rounded-[50px] p-4 mt-6 cursor-pointer relative z-[1] overflow-hidden download-btn hover:text-black"
-              >
-                <h4 className="relative z-10 uppercase font-[600] tracking-[1px]">
+              <div className="border-[1px] border-white rounded-[50px] p-4 cursor-pointer relative z-[1] overflow-hidden download-btn">
+                <h4 className="relative z-10 uppercase text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
                   see work
                 </h4>
-              </motion.div>
+              </div>
             </MagneticEffect>
-            <div className="absolute top-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[80px] -z-[10]"></div>
-            <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
-          </div>
-          <div className="flex items-end md:items-center justify-center order-first md:order-none md:justify-end">
-            <div className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] xl:w-[450px] xl:h-[450px] bg-[#edecec] rounded-[10px]">
-              <img
-                src="/hero.jpg"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
         </div>
+        <div className="absolute top-0 left-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
+        <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
+        <div className="absolute top-1/2 w-[100px] h-[100px] md:w-[150px] md:h-[150px] xl:w-[200px] xl:h-[200px] bg-[linear-gradient(45deg,#fff0,#ffffff1f)] rounded-full -z-[10]"></div>
+        <div className="absolute top-[20%] right-[20%] w-[100px] h-[100px] md:w-[150px] md:h-[150px] xl:w-[200px] xl:h-[200px] bg-[linear-gradient(180deg,#fff0,#ffffff1f)]  rounded-full -z-[10]"></div>
       </div>
     </>
   );
