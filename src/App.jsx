@@ -13,10 +13,15 @@ import {
 import { IoIosMenu } from "react-icons/io";
 import MobileNavbar from "./components/MobileNavbar";
 import { motion, useScroll } from "framer-motion";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const { scrollYProgress } = useScroll();
   const [open, setOpen] = useState(false);
+  const tl = gsap.timeline();
   return (
     <>
       <motion.div
@@ -29,11 +34,11 @@ const App = () => {
           className="section hero-section h-screen relative z-[1] bg-[#0f183e]"
         >
           <Navbar />
-          <Herosection />
+          <Herosection tl={tl} />
+          <About />
+          <Skillssection />
+          <Projectssection />
         </div>
-        <About />
-        <Skillssection />
-        <Projectssection />
       </div>
       <MagneticEffect bgColor="green">
         <div
