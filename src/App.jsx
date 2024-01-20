@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 const App = () => {
   const [open, setOpen] = useState(false);
   const tl = gsap.timeline();
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));

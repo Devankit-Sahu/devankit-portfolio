@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { MagneticEffect } from "./";
 import { useTheme } from "../context/themeContext";
 
 const Herosection = ({ tl }) => {
@@ -9,7 +8,6 @@ const Herosection = ({ tl }) => {
   let ref3 = useRef(null);
   let ref4 = useRef(null);
   let btn1 = useRef(null);
-  let btn2 = useRef(null);
   useEffect(() => {
     tl.from([ref1, ref2, ref3, ref4], {
       opacity: 0,
@@ -21,11 +19,6 @@ const Herosection = ({ tl }) => {
     tl.from(btn1, {
       opacity: 0,
       x: -50,
-      duration: 1,
-    });
-    tl.from(btn2, {
-      opacity: 0,
-      x: 50,
       duration: 1,
     });
   }, []);
@@ -55,26 +48,16 @@ const Herosection = ({ tl }) => {
           </h1>
           <p
             ref={(p) => (ref4 = p)}
-            className="mt-5 text-[10px] md:text-[15px]"
+            className="mt-10 text-[10px] md:text-[15px]"
           >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
             sequi!
           </p>
-          <div className="flex justify-center gap-20 mt-5 w-full">
-            <div
-              ref={(btn) => (btn1 = btn)}
-              className="cursor-pointer action-btn"
-            >
+          <div ref={(btn) => (btn1 = btn)}>
+            <div className="cursor-pointer action-btn mt-5">
               <h4 className="capitalize text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
-                Get Connected
+                see work
               </h4>
-            </div>
-            <div ref={(btn) => (btn2 = btn)}>
-              <div className="cursor-pointer action-btn">
-                <h4 className="capitalize text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
-                  see work
-                </h4>
-              </div>
             </div>
           </div>
         </div>

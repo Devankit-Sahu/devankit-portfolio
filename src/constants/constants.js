@@ -2,7 +2,6 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaXTwitter,
-  FaInstagram,
 } from "react-icons/fa6";
 
 export const navLinks = [
@@ -32,18 +31,17 @@ export const iconsList = [
   {
     icon: FaGithub,
     bgColor: "red",
+    href: "https://github.com/Devankit-Sahu",
   },
   {
     icon: FaLinkedinIn,
     bgColor: "blue",
+    href: "https://www.linkedin.com/in/devankit-sahu/",
   },
   {
     icon: FaXTwitter,
     bgColor: "green",
-  },
-  {
-    icon: FaInstagram,
-    bgColor: "purple",
+    href: "https://twitter.com/Devankit_sahu15",
   },
 ];
 
