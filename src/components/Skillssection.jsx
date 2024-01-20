@@ -7,7 +7,7 @@ const Skillssection = () => {
       <div className="container mx-auto px-10 h-full 2xl:px-40">
         <div className="flex justify-center">
           <h1 className="text-5xl pt-5 heading relative">
-            Skills <span className="text-6xl text-[blue] font-[800]">&</span>{" "}
+            Languages <span className="text-6xl text-[blue] font-[800]">&</span>{" "}
             tools
           </h1>
         </div>

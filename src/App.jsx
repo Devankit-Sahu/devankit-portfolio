@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   About,
   CursorDot,
@@ -12,48 +12,51 @@ import {
 } from "./components";
 import { IoIosMenu } from "react-icons/io";
 import MobileNavbar from "./components/MobileNavbar";
-import { motion, useScroll } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ThemeProvider } from "./context/themeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  const { scrollYProgress } = useScroll();
   const [open, setOpen] = useState(false);
   const tl = gsap.timeline();
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = () => {
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  };
+
+  useEffect(() => {
+    document.querySelector("html").classList.remove("light", "dark");
+    document.querySelector("html").classList.add(mode);
+  }, [mode]);
+
   return (
     <>
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
-      <div className="main">
-        <div
-          id="hero"
-          className="section hero-section h-screen relative z-[1] bg-[#0f183e]"
-        >
+      <ThemeProvider value={{ mode, toggleMode }}>
+        <div className="main dark:bg-[#070a29]">
           <Navbar />
           <Herosection tl={tl} />
-          <About />
+          <About tl={tl} />
           <Skillssection />
           <Projectssection />
         </div>
-      </div>
-      <MagneticEffect bgColor="green">
-        <div
-          onClick={() => {
-            setOpen(true);
-          }}
-          className="fixed top-[30px] right-[30px] z-[1] border p-3 rounded-full text-white text-2xl block md:hidden"
-        >
-          <IoIosMenu />
-        </div>
-      </MagneticEffect>
-      <MobileNavbar open={open} setOpen={setOpen} />
-      <SocialIcons />
-      <ToggleButton />
-      <CursorDot />
+        <MagneticEffect bgColor="green">
+          <div
+            onClick={() => {
+              setOpen(true);
+            }}
+            className="fixed top-[12px] right-[30px] z-[10] border p-3 rounded-full text-white text-2xl block md:hidden"
+          >
+            <IoIosMenu />
+          </div>
+        </MagneticEffect>
+        <MobileNavbar open={open} setOpen={setOpen} />
+        <SocialIcons />
+        <CursorDot />
+        <ToggleButton />
+      </ThemeProvider>
     </>
   );
 };

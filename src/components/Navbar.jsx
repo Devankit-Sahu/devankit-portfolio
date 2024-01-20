@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { navLinks } from "../constants/constants";
+import { useTheme } from "../context/themeContext";
 
 const Navbar = () => {
+  const { mode } = useTheme();
+  const ref = useRef(null);
   useEffect(() => {
     const handleNavLinkClick = (event) => {
       event.preventDefault();
@@ -15,30 +18,45 @@ const Navbar = () => {
       });
     };
 
+    const handleScroll = () => {
+      ref.current.classList.toggle("sticky", window.scrollY > 0);
+      const bgColor = mode === "light" ? "#f0f8ff" : "#151538";
+      ref.current.style.backgroundColor =
+        window.scrollY > 0 ? bgColor : "transparent";
+    };
+
     const navLinks = document.querySelectorAll(".nav-link");
 
     navLinks.forEach((link) => {
       link.addEventListener("click", handleNavLinkClick);
     });
 
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       navLinks.forEach((link) => {
         link.removeEventListener("click", handleNavLinkClick);
       });
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [mode]);
 
   return (
-    <nav className="absolute left-0 right-0 z-10">
-      <div className="container mx-auto 2xl:px-40 py-5 md:flex md:justify-between md:gap-20 md:items-end">
-        <h2 className="text-2xl md:text-4xl xl:text-5xl tracking-wide text-[yellow] text">
+    <nav className="absolute top-0 left-0 right-0 z-10" ref={ref}>
+      <div className="container mx-auto 2xl:px-40 py-5 flex justify-between items-end">
+        <h2
+          className="text-2xl md:text-4xl xl:text-5xl tracking-wide text-transparent font-black"
+          style={{
+            WebkitTextStroke: mode === "light" ? "1px black" : "1px white",
+          }}
+        >
           Devankit
         </h2>
         <ul className="hidden md:flex md:items-center md:gap-5">
           {navLinks.map((link) => (
             <li key={link.linkName} className="cursor-pointer">
               <a
-                className={`no-underline nav-link text-[20px] text-white tracking-[.5px] ${
+                className={`no-underline nav-link text-[20px] text-black dark:text-white tracking-[.5px] ${
                   link.active && "active"
                 }`}
                 href={link.href}

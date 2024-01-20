@@ -1,37 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import MagneticEffect from "./MagneticEffect";
 import { FaMoon } from "react-icons/fa6";
 import { IoSunnyOutline } from "react-icons/io5";
+import { useTheme } from "../context/themeContext";
 
 const ToggleButton = () => {
-    const [mode, setMode] = useState(false);
-
-    const handleThemeToggle = (event) => {
-      event.preventDefault();
-      setMode(!mode);
-    };
+  const { mode, toggleMode } = useTheme();
+  const handleThemeToggle = () => {
+    toggleMode();
+  };
   return (
     <div className="fixed z-[1] right-2 md:right-10 bottom-20">
-      <MagneticEffect bgColor="">
+      <MagneticEffect>
         <div
           onClick={handleThemeToggle}
-          className={`flex items-center justify-center bg-transparent border-[1.5px] ${
-            mode ? "border-black" : "border-[hsla(0,0%,100%,0.3)]"
-          } rounded-[100px]  gap-x-3`}
+          className="w-[60px] h-[32px] border-[1px] border-purple-800 dark:border-white/40 rounded-2xl relative cursor-pointer dark:bg-purple-100 mr-10 md:mr-0"
         >
           <span
-            className={`flex items-center justify-center ${
-              mode ? "text-white bg-black" : "text-[#b8b8bd]"
-            } w-[30px] h-[30px] rounded-full`}
+            className={`absolute flex items-center justify-center text-white bg-[#5c27fe] right-0 dark:left-0 w-[30px] h-[30px] rounded-full`}
           >
-            <IoSunnyOutline className="text-[15px]" />
-          </span>
-          <span
-            className={`flex items-center justify-center ${
-              mode ? "text-[#b8b8bd]" : "text-black bg-white"
-            }  w-[30px] h-[30px] rounded-full`}
-          >
-            <FaMoon className="text-[15px]" />
+            {mode === "dark" ? (
+              <IoSunnyOutline className="text-[15px]" />
+            ) : (
+              <FaMoon className="text-[15px]" />
+            )}
           </span>
         </div>
       </MagneticEffect>

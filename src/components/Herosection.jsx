@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { MagneticEffect } from "./";
+import { useTheme } from "../context/themeContext";
 
 const Herosection = ({ tl }) => {
+  const { mode } = useTheme();
   let ref1 = useRef(null);
   let ref2 = useRef(null);
   let ref3 = useRef(null);
@@ -29,18 +31,12 @@ const Herosection = ({ tl }) => {
   }, []);
 
   return (
-    <>
-      <div
-        className="absolute w-full h-full left-0 top-0 bg-no-repeat bg-cover bg-center opacity-[.2] -z-[1]"
-        style={{
-          backgroundImage: "url('/hero-overlay.jpg')",
-        }}
-      ></div>
+    <div className="relative h-screen" id="hero">
       <div className="container px-10 2xl:px-40 mx-auto h-full">
-        <div className="h-full flex flex-col items-center justify-center text-white">
+        <div className="h-full flex flex-col items-center justify-center text-black dark:text-white">
           <h2 ref={(h2) => (ref1 = h2)} className="text-[20px] mb-4 ">
             👋, my name is{" "}
-            <span className="text-[red] font-bolder">Devankit Sahu</span>
+            <span className="text-[purple] font-[900]">Devankit Sahu</span>
           </h2>
           <h1
             ref={(h1) => (ref2 = h1)}
@@ -50,7 +46,10 @@ const Herosection = ({ tl }) => {
           </h1>
           <h1
             ref={(h1) => (ref3 = h1)}
-            className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black text capitalize"
+            className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black text-transparent capitalize"
+            style={{
+              WebkitTextStroke: mode === "light" ? "2px black" : "2px white",
+            }}
           >
             Developer
           </h1>
@@ -64,29 +63,27 @@ const Herosection = ({ tl }) => {
           <div className="flex justify-center gap-20 mt-5 w-full">
             <div
               ref={(btn) => (btn1 = btn)}
-              className="border-[1px] border-white rounded-[50px] p-4 cursor-pointer relative z-[1] overflow-hidden download-btn"
+              className="cursor-pointer action-btn"
             >
-              <h4 className="relative z-10 uppercase text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
-                Download resume
+              <h4 className="capitalize text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
+                Get Connected
               </h4>
             </div>
             <div ref={(btn) => (btn2 = btn)}>
-              <MagneticEffect>
-                <div className="border-[1px] border-white rounded-[50px] p-4 cursor-pointer relative z-[1] overflow-hidden download-btn">
-                  <h4 className="relative z-10 uppercase text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
-                    see work
-                  </h4>
-                </div>
-              </MagneticEffect>
+              <div className="cursor-pointer action-btn">
+                <h4 className="capitalize text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
+                  see work
+                </h4>
+              </div>
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
-        <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px] -z-[10]"></div>
-        <div className="absolute top-1/2 w-[100px] h-[100px] md:w-[150px] md:h-[150px] xl:w-[200px] xl:h-[200px] bg-[linear-gradient(45deg,#fff0,#ffffff1f)] rounded-full -z-[10]"></div>
-        <div className="absolute top-[20%] right-[20%] w-[100px] h-[100px] md:w-[150px] md:h-[150px] xl:w-[200px] xl:h-[200px] bg-[linear-gradient(180deg,#fff0,#ffffff1f)]  rounded-full -z-[10]"></div>
+        <div className="dark:absolute dark:top-0 dark:left-0 dark:w-[250px] dark:h-[250px] dark:bg-[#0088ff50] dark:rounded-full dark:blur-[100px]"></div>
+        <div className="dark:absolute dark:bottom-0 dark:right-0 dark:w-[250px] dark:h-[250px] dark:bg-[#0088ff50] dark:rounded-full dark:blur-[100px]"></div>
+        <div className="dark:absolute dark:top-1/2 dark:w-[100px] dark:h-[100px] dark:md:w-[150px] dark:md:h-[150px] dark:xl:w-[200px] dark:xl:h-[200px] dark:bg-[linear-gradient(45deg,#fff0,#ffffff1f)] dark:rounded-full"></div>
+        <div className="dark:absolute dark:top-[20%] dark:right-[20%] dark:w-[100px] dark:h-[100px] dark:md:w-[150px] dark:md:h-[150px] dark:xl:w-[200px] dark:xl:h-[200px] dark:bg-[linear-gradient(180deg,#fff0,#ffffff1f)]  dark:rounded-full"></div>
       </div>
-    </>
+    </div>
   );
 };
 
