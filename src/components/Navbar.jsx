@@ -18,26 +18,16 @@ const Navbar = () => {
       });
     };
 
-    const handleScroll = () => {
-      ref.current.classList.toggle("sticky", window.scrollY > 0);
-      const bgColor = mode === "light" ? "#f0f8ff" : "#151538";
-      ref.current.style.backgroundColor =
-        window.scrollY > 0 ? bgColor : "transparent";
-    };
-
     const navLinks = document.querySelectorAll(".nav-link");
 
     navLinks.forEach((link) => {
       link.addEventListener("click", handleNavLinkClick);
     });
 
-    window.addEventListener("scroll", handleScroll);
-
     return () => {
       navLinks.forEach((link) => {
         link.removeEventListener("click", handleNavLinkClick);
       });
-      window.removeEventListener("scroll", handleScroll);
     };
   }, [mode]);
 

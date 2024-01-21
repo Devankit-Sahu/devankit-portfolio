@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { useTheme } from "../context/themeContext";
+import gsap from "gsap";
 
-const Herosection = ({ tl }) => {
+const Herosection = () => {
   const { mode } = useTheme();
   let ref1 = useRef(null);
   let ref2 = useRef(null);
@@ -9,22 +10,32 @@ const Herosection = ({ tl }) => {
   let ref4 = useRef(null);
   let btn1 = useRef(null);
   useEffect(() => {
-    tl.from([ref1, ref2, ref3, ref4], {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      stagger: 0.4,
-      skewY: 10,
-    });
-    tl.from(btn1, {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-    });
+  const elements = [ref1, ref2, ref3, ref4];
+
+  const tl = gsap.timeline();
+
+  elements.forEach((element, index) => {
+    const direction = index % 2 === 0 ? 100 : -100;
+
+    tl.from(
+      element,
+      {
+        opacity: 0,
+        x: direction,
+        duration: 1,
+      },
+      index === 0 ? 0 : "-=0.4"
+    );
+  });
+
+  tl.from(btn1, {
+    opacity: 0,
+    scale: 0,
+  });
   }, []);
 
   return (
-    <div className="relative h-screen" id="hero">
+    <div className="relative bg-[#d2d3db] dark:bg-inherit h-screen" id="hero">
       <div className="container px-10 2xl:px-40 mx-auto h-full">
         <div className="h-full flex flex-col items-center justify-center text-black dark:text-white">
           <h2 ref={(h2) => (ref1 = h2)} className="text-[20px] mb-4 ">

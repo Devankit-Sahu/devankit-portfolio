@@ -20,7 +20,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const tl = gsap.timeline();
   const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
@@ -37,10 +36,10 @@ const App = () => {
       <ThemeProvider value={{ mode, toggleMode }}>
         <div className="main dark:bg-[#070a29]">
           <Navbar />
-          <Herosection tl={tl} />
-          <About tl={tl} />
+          <Herosection />
+          <About />
           <Skillssection />
-          <Projectssection />
+          {/* <Projectssection /> */}
         </div>
         <MagneticEffect bgColor="green">
           <div

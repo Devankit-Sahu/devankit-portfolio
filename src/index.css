@@ -151,3 +151,22 @@ body {
 .action-btn:hover h4::before {
   transform: translateX(300px);
 }
+
+.blur-effect::after,.blur-effect::before{
+  position: absolute;
+  content: "";
+  width: 28rem;
+  height: 28rem;
+  border-radius: 28rem;
+  filter: blur(200px);
+}
+.blur-effect::after{
+  background: #7c66e3;
+  bottom:0;
+  right: 2rem;
+}
+.blur-effect::before{
+  background: #9e51b9;
+  top: -2rem;
+  left: 5rem;
+}

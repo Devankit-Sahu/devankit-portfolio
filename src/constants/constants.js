@@ -3,6 +3,7 @@ import {
   FaGithub,
   FaXTwitter,
 } from "react-icons/fa6";
+import { FaCode, FaLaptopCode, FaTools } from "react-icons/fa";
 
 export const navLinks = [
   {
@@ -47,56 +48,72 @@ export const iconsList = [
 
 export const skillsAndtoolsObj = [
   {
-    name: "ReactJs",
-    image: "/icons8-react.svg",
+    name: "Frontend",
+    icon: FaLaptopCode,
+    skills: [
+      {
+        name: "Reactjs",
+        percentage: "90%",
+      },
+      {
+        name: "Html",
+        percentage: "90%",
+      },
+      {
+        name: "Css",
+        percentage: "90%",
+      },
+      {
+        name: "JavaScript",
+        percentage: "90%",
+      },
+    ],
   },
   {
-    name: "Javscript",
-    image: "/icons8-javascript.svg",
+    name: "Backend",
+    icon: FaCode,
+    skills: [
+      {
+        name: "NodeJs",
+        percentage: "85%",
+      },
+      {
+        name: "ExpressJs",
+        percentage: "84%",
+      },
+    ],
   },
   {
-    name: "NodeJs",
-    image: "/icons8-nodejs.svg",
+    name: "Tools",
+    icon: FaTools,
+    skills: [
+      {
+        name: "Vs Code",
+        percentage: "90%",
+      },
+      {
+        name: "Git & Github",
+        percentage: "90%",
+      },
+    ],
   },
   {
-    name: "Html",
-    image: "/icons8-html-logo.svg",
-  },
-  {
-    name: "Css",
-    image: "/icons8-css-logo.svg",
-  },
-  {
-    name: "TailwindCss",
-    image: "/icons8-tailwindcss.svg",
-  },
-  {
-    name: "Redux",
-    image: "/icons8-redux.svg",
-  },
-  {
-    name: "MongoDb",
-    image: "/icons8-mongodb.svg",
-  },
-  {
-    name: "Python",
-    image: "/icons8-python.svg",
-  },
-  {
-    name: "Django",
-    image: "/icons8-django.svg",
-  },
-  {
-    name: "Vs Code",
-    image: "/icons8-vscode.svg",
-  },
-  {
-    name: "Git",
-    image: "/icons8-git.svg",
-  },
-  {
-    name: "Github",
-    image: "/icons8-github.svg",
+    name: "Languages",
+    icon: FaTools,
+    skills: [
+      {
+        name: "Javascript",
+        percentage: "95%",
+      },
+      {
+        name: "Python",
+        percentage: "91%",
+      },
+      {
+        name: "C/C++",
+        percentage: "90%",
+      },
+    ],
   },
 ];
 
