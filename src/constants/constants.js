@@ -48,24 +48,94 @@ export const iconsList = [
 
 export const skillsAndtoolsObj = [
   {
+    name: "All",
+    icon: FaLaptopCode,
+    skills: [
+      {
+        name: "Reactjs",
+        icon: "/icons8-react.svg",
+      },
+      {
+        name: "JavaScript",
+        icon: "/icons8-javascript.svg",
+      },
+      {
+        name: "Html",
+        icon: "/icons8-html-logo.svg",
+      },
+      {
+        name: "Css",
+        icon: "/icons8-css-logo.svg",
+      },
+      {
+        name: "TailwindCss",
+        icon: "/icons8-tailwindcss.svg",
+      },
+      {
+        name: "NodeJS",
+        icon: "/icons8-nodejs.svg",
+      },
+      {
+        name: "ExpressJS",
+        icon: "/icons8-expressjs.svg",
+      },
+      {
+        name: "Python",
+        icon: "/icons8-python.svg",
+      },
+      {
+        name: "Django",
+        icon: "/icons8-django.svg",
+      },
+      {
+        name: "Git",
+        icon: "/icons8-git.svg",
+      },
+      {
+        name: "Github",
+        icon: "/icons8-github.svg",
+      },
+      {
+        name: "VsCode",
+        icon: "/icons8-vscode.svg",
+      },
+      {
+        name: "Redux",
+        icon: "/icons8-redux.svg",
+      },
+      {
+        name: "MongoDb",
+        icon: "/icons8-mongodb.svg",
+      },
+    ],
+  },
+  {
     name: "Frontend",
     icon: FaLaptopCode,
     skills: [
       {
         name: "Reactjs",
-        percentage: "90%",
-      },
-      {
-        name: "Html",
-        percentage: "90%",
-      },
-      {
-        name: "Css",
-        percentage: "90%",
+        icon: "/icons8-react.svg",
       },
       {
         name: "JavaScript",
-        percentage: "90%",
+        icon: "/icons8-javascript.svg",
+      },
+      {
+        name: "Html",
+        icon: "/icons8-html-logo.svg",
+      },
+      {
+        name: "Css",
+        icon: "/icons8-css-logo.svg",
+      },
+      {
+        name: "TailwindCss",
+        icon: "/icons8-tailwindcss.svg",
+      },
+      {
+        name: "Redux",
+        icon: "/icons8-redux.svg",
       },
     ],
   },
@@ -74,12 +144,12 @@ export const skillsAndtoolsObj = [
     icon: FaCode,
     skills: [
       {
-        name: "NodeJs",
-        percentage: "85%",
+        name: "NodeJS",
+        icon: "/icons8-nodejs.svg",
       },
       {
-        name: "ExpressJs",
-        percentage: "84%",
+        name: "ExpressJS",
+        icon: "/icons8-expressjs.svg",
       },
     ],
   },
@@ -88,30 +158,16 @@ export const skillsAndtoolsObj = [
     icon: FaTools,
     skills: [
       {
-        name: "Vs Code",
-        percentage: "90%",
+        name: "Git",
+        icon: "/icons8-git.svg",
       },
       {
-        name: "Git & Github",
-        percentage: "90%",
-      },
-    ],
-  },
-  {
-    name: "Languages",
-    icon: FaTools,
-    skills: [
-      {
-        name: "Javascript",
-        percentage: "95%",
+        name: "Github",
+        icon: "/icons8-github.svg",
       },
       {
-        name: "Python",
-        percentage: "91%",
-      },
-      {
-        name: "C/C++",
-        percentage: "90%",
+        name: "VsCode",
+        icon: "/icons8-vscode.svg",
       },
     ],
   },
@@ -124,19 +180,20 @@ export const projectList = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Maxime, magnam?",
     tech: [
       {
-        image: "/icons8-javascript.svg",
-        name: "Javascript",
-      },
-      {
         image: "/icons8-react.svg",
         name: "ReactJs",
       },
+      {
+        image: "/icons8-javascript.svg",
+        name: "Javascript",
+      },
+
       {
         image: "/icons8-nodejs.svg",
         name: "NodeJS",
       },
       {
-        image: "/icons8-react.svg",
+        image: "/icons8-expressjs.svg",
         name: "ExpressJs",
       },
       {
@@ -144,7 +201,9 @@ export const projectList = [
         name: "MongoDb",
       },
     ],
+    link: "https://github.com/Devankit-Sahu/ecommerce-frontend",
   },
+
   {
     name: "MERN Chat Application",
     image: "/chat.png",
@@ -163,7 +222,7 @@ export const projectList = [
         name: "NodeJS",
       },
       {
-        image: "/icons8-react.svg",
+        image: "/icons8-expressjs.svg",
         name: "ExpressJs",
       },
       {
@@ -171,5 +230,6 @@ export const projectList = [
         name: "MongoDb",
       },
     ],
+    link: "https://github.com/Devankit-Sahu/chat-frontend",
   },
 ];

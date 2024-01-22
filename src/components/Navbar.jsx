@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-10" ref={ref}>
-      <div className="container mx-auto 2xl:px-40 py-5 flex justify-between items-end">
+      <div className="container mx-auto px-10 2xl:px-40 py-5 flex justify-between items-end">
         <h2
           className="text-2xl md:text-4xl xl:text-5xl tracking-wide text-transparent font-black"
           style={{

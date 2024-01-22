@@ -10,7 +10,7 @@ const ToggleButton = () => {
     toggleMode();
   };
   return (
-    <div className="fixed z-[1] right-2 md:right-10 bottom-20">
+    <div className="fixed z-[1] -right-[10px] md:right-10 bottom-20">
       <MagneticEffect>
         <div
           onClick={handleThemeToggle}

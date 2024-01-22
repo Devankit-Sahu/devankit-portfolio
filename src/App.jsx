@@ -39,14 +39,14 @@ const App = () => {
           <Herosection />
           <About />
           <Skillssection />
-          {/* <Projectssection /> */}
+          <Projectssection />
         </div>
         <MagneticEffect bgColor="green">
           <div
             onClick={() => {
               setOpen(true);
             }}
-            className="fixed top-[12px] right-[30px] z-[10] border p-3 rounded-full text-white text-2xl block md:hidden"
+            className="fixed top-[12px] right-[10px] z-[10] border p-2 md:p-3 rounded-full text-white text-2xl block md:hidden"
           >
             <IoIosMenu />
           </div>

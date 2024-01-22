@@ -9,48 +9,44 @@ const Herosection = () => {
   let ref3 = useRef(null);
   let ref4 = useRef(null);
   let btn1 = useRef(null);
-  useEffect(() => {
-  const elements = [ref1, ref2, ref3, ref4];
-
   const tl = gsap.timeline();
-
-  elements.forEach((element, index) => {
-    const direction = index % 2 === 0 ? 100 : -100;
-
-    tl.from(
-      element,
-      {
-        opacity: 0,
-        x: direction,
-        duration: 1,
-      },
-      index === 0 ? 0 : "-=0.4"
-    );
-  });
-
-  tl.from(btn1, {
-    opacity: 0,
-    scale: 0,
-  });
+  useEffect(() => {
+    tl.from([ref1, ref2, ref3, ref4], {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger:0.8
+    });
+    tl.from(btn1, {
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+    });
   }, []);
 
   return (
-    <div className="relative bg-[#d2d3db] dark:bg-inherit h-screen" id="hero">
+    <div
+      className="relative bg-[#d2d3db] dark:bg-inherit h-screen w-full"
+      id="hero"
+    >
       <div className="container px-10 2xl:px-40 mx-auto h-full">
         <div className="h-full flex flex-col items-center justify-center text-black dark:text-white">
-          <h2 ref={(h2) => (ref1 = h2)} className="text-[20px] mb-4 ">
-            👋, my name is{" "}
+          <h2
+            ref={(h2) => (ref1 = h2)}
+            className="text-[20px] leading-[30px] sm:text-[20px] sm:leading-[30px]"
+          >
+            👋, My name is{" "}
             <span className="text-[purple] font-[900]">Devankit Sahu</span>
           </h2>
           <h1
             ref={(h1) => (ref2 = h1)}
-            className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black capitalize"
+            className="text-[60px] leading-[70px] sm:text-[80px] sm:leading-[110px] xl:text-[100px] xl:leading-[130px] font-black capitalize"
           >
-            web
+            Full Stack
           </h1>
           <h1
             ref={(h1) => (ref3 = h1)}
-            className="text-[70px] leading-[70px] md:text-[100px] md:leading-[100px] xl:text-[150px] xl:leading-[150px] font-black text-transparent capitalize"
+            className="text-[60px] leading-[70px] mb-10 sm:text-[80px] sm:leading-[110px] xl:text-[100px] xl:leading-[130px] font-black text-transparent capitalize"
             style={{
               WebkitTextStroke: mode === "light" ? "2px black" : "2px white",
             }}
@@ -59,14 +55,14 @@ const Herosection = () => {
           </h1>
           <p
             ref={(p) => (ref4 = p)}
-            className="mt-10 text-[10px] md:text-[15px]"
+            className="text-[15px] leading-[20px] text-center"
           >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
             sequi!
           </p>
           <div ref={(btn) => (btn1 = btn)}>
             <div className="cursor-pointer action-btn mt-5">
-              <h4 className="capitalize text-[10px] leading-[10px] md:text-[25px] md:leading-[25px]">
+              <h4 className="capitalize text-[15px] leading-[15px] sm:text-[25px] sm:leading-[25px]">
                 see work
               </h4>
             </div>
