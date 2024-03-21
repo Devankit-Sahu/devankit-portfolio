@@ -57,14 +57,18 @@ const Herosection = () => {
             ref={(p) => (ref4 = p)}
             className="text-[15px] leading-[20px] text-center"
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-            sequi!
+            Passionate full stack developer with a knack for bridging the gap
+            between design and functionality, delivering user-centric solutions
+            across the entire software stack
           </p>
           <div ref={(btn) => (btn1 = btn)}>
             <div className="cursor-pointer action-btn mt-5">
-              <h4 className="capitalize text-[15px] leading-[15px] sm:text-[25px] sm:leading-[25px]">
+              <a
+                href="#projects"
+                className="capitalize text-[15px] leading-[15px] sm:text-[25px] sm:leading-[25px]"
+              >
                 see work
-              </h4>
+              </a>
             </div>
           </div>
         </div>

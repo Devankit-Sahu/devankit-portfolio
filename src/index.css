@@ -119,7 +119,7 @@ body {
   padding: 5px;
 }
 
-.action-btn h4 {
+.action-btn a {
   background: linear-gradient(264.28deg, #dec7ff -38.2%, #5c27fe 103.12%);
   border-radius: 10px;
   color: #fff;
@@ -129,7 +129,7 @@ body {
   overflow: hidden;
 }
 
-.action-btn h4:before {
+.action-btn a:before {
   background: linear-gradient(
     90deg,
     hsla(0, 0%, 100%, 0.13),
@@ -148,7 +148,7 @@ body {
   transform: translateX(-60px);
 }
 
-.action-btn:hover h4::before {
+.action-btn:hover a::before {
   transform: translateX(300px);
 }
 
