@@ -1,39 +1,40 @@
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
 
 const About = () => {
-  let h1ref = useRef(null);
-  let p1ref = useRef(null);
-  let p2ref = useRef(null);
-  let p3ref = useRef(null);
-  let divref = useRef(null);
+  const h1ref = useRef();
+  const p1ref = useRef();
+  const p2ref = useRef();
+  const p3ref = useRef();
+  const divref = useRef();
+
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        scoller: "#main",
-        start: "top 40%",
-        end: "top 10%",
-        scrub: 2,
+        scroller: "body",
+        start: "top 90%",
+        end: "top top",
+        scrub: 1,
       },
     });
-    tl.from(h1ref, {
+    tl.from(h1ref.current, {
       y: 50,
       opacity: 0,
       duration: 1,
     });
     tl.from(
-      [p1ref, p2ref, p3ref],
+      [p1ref.current, p2ref.current, p3ref.current],
       {
         x: -50,
         opacity: 0,
-        duration: 1,
-        stagger: 0.8,
+        duration: 0.5,
+        stagger: 1,
       },
       "a"
     );
     tl.from(
-      divref,
+      divref.current,
       {
         x: 50,
         opacity: 0,
@@ -44,27 +45,24 @@ const About = () => {
   }, []);
 
   return (
-    <div
-      className="h-screen w-full bg-[#e4e5f1] dark:bg-[linear-gradient(45deg,#09092d,#1d174c)] text-black dark:text-white"
+    <section
+      className="h-screen w-full bg-[linear-gradient(45deg,#09092d,#1d174c)] text-white pb-2"
       id="about"
     >
-      <div className="container mx-auto px-10 2xl:px-40 pt-10">
-        <h1
-          ref={(h1) => (h1ref = h1)}
-          className="text-2xl sm:text-4xl md:text-5xl mb-10 text-center"
-        >
-          About{" "}
-          <span className="capitalize text-black dark:text-[blue] font-[900]">
-            me
-          </span>
-        </h1>
-      </div>
-      <div className="container mx-auto px-10 2xl:px-40 h-[70%] relative">
-        <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="flex flex-col items-center md:items-start justify-center">
+      <div className="h-full container mx-auto px-10 2xl:px-40 relative">
+        <div className="overflow-hidden pt-5">
+          <h1
+            ref={h1ref}
+            className="text-2xl sm:text-4xl md:text-5xl text-center uppercase"
+          >
+            About Me
+          </h1>
+        </div>
+        <div className="h-[calc(100%-100px)] grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="h-full flex flex-col items-center md:items-start justify-center">
             <p
-              ref={(p) => (p1ref = p)}
-              className="text-[15px] leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-start"
+              ref={p1ref}
+              className="text-xs sm:text-[15px] sm:leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-justify"
             >
               Hello, I'm Devankit Sahu a Full Stack Web Developer with expertise
               in both frontend and backend technologies.My tech stack includes
@@ -72,8 +70,8 @@ const About = () => {
               Express.js, MongoDB for the backend.
             </p>
             <p
-              ref={(p) => (p2ref = p)}
-              className="text-[15px] leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-start"
+              ref={p2ref}
+              className="text-xs sm:text-[15px] sm:leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-justify"
             >
               I've successfully created two distinct websites—a dynamic
               e-commerce platform and an interactive chat application. These
@@ -81,18 +79,18 @@ const About = () => {
               development, and seamless integration of technologies.
             </p>
             <p
-              ref={(p) => (p3ref = p)}
-              className="text-[15px] leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-start"
+              ref={p3ref}
+              className="text-xs sm:text-[15px] sm:leading-[18px] leading-[18px] md:text-[18px] md:leading-[23px] mb-3 text-center md:text-justify"
             >
               With a commitment to continuous learning, staying updated on new
               technologies and best practices in the ever-evolving field of web
               development.
             </p>
           </div>
-          <div className="flex items-center justify-center order-first md:order-none">
+          <div className="h-full flex items-center justify-center order-first md:order-none">
             <div
-              ref={(div) => (divref = div)}
-              className="w-[200px] h-[200px] rounded-full overflow-hidden md:rounded-none md:w-[300px] md:h-[300px] xl:w-[350px] xl:h-[350px]  border-[10px] border-white"
+              ref={divref}
+              className="w-[200px] h-[200px] rounded-full overflow-hidden border-[10px] border-white md:w-[300px] md:h-[300px] xl:w-[350px] xl:h-[350px]"
             >
               <img
                 src="/hero.jpg"
@@ -102,11 +100,11 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="dark:absolute dark:top-0 dark:left-0 dark:w-[250px] dark:h-[250px] dark:bg-[#5500ff50] dark:rounded-full dark:blur-[100px] "></div>
-        <div className="dark:absolute dark:bottom-0 dark:right-0 dark:w-[250px] dark:h-[250px] dark:bg-[#5500ff50] dark:rounded-full dark:blur-[100px]"></div>
-        <div className="absolute top-1/2 dark:w-[100px] dark:h-[100px] dark:md:w-[150px] dark:md:h-[150px] dark:xl:w-[200px] dark:xl:h-[200px] dark:bg-[linear-gradient(45deg,#ffffff08,#ffffff38)] dark:rounded-full "></div>
+        <div className="absolute top-0 left-0 w-[250px] h-[250px] bg-[#5500ff50] rounded-full blur-[100px] "></div>
+        <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#5500ff50] rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 w-[100px] h-[100px] md:w-[150px] md:h-[150px] xl:w-[200px] xl:h-[200px] bg-[linear-gradient(45deg,#ffffff08,#ffffff38)] rounded-full "></div>
       </div>
-    </div>
+    </section>
   );
 };
 

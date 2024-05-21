@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const MagneticEffect = ({ children, bgColor="" }) => {
+const MagneticEffect = ({ children, bgColor = "" }) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const MagneticEffect = ({ children, bgColor="" }) => {
 
     const handleHoverExit = () => {
       gsap.to(ref.current, {
-        backgroundColor: "", // Reset to default background color
+        backgroundColor: "",
         duration: 0.3,
         ease: "power2.out",
       });

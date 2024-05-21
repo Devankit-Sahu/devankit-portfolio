@@ -11,7 +11,7 @@ const SocialIcons = () => {
             <a
               target="_blank"
               href={icon.href}
-              className="w-10 h-10 leading-[41px] text-center text-[18px] bg-transparent text-black dark:text-white border-[1px] border-black dark:border-[hsla(0,0%,100%,0.18)] flex items-center justify-center rounded-full cursor-pointer"
+              className="w-10 h-10 leading-[41px] text-center text-[18px] bg-transparent text-white border-[1px] border-[hsla(0,0%,100%,0.18)] flex items-center justify-center rounded-full cursor-pointer"
             >
               {<icon.icon />}
             </a>
