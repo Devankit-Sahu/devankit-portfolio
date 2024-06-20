@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import pdf from "/devankit.pdf";
 
 const Herosection = () => {
   const tl = gsap.timeline();
@@ -107,7 +108,7 @@ const Herosection = () => {
             className="download-btn my-2  xs:w-[250px] mx-auto md:mx-0"
           >
             <a
-              href="/devankit.pdf"
+              href="/resume.pdf"
               target="_blank"
               className="capitalize text-[15px] sm:text-[20px] sm:leading-[20px] md:text-[25px] md:leading-[25px]"
             >
