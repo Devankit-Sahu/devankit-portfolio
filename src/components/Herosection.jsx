@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import pdf from "/devankit.pdf";
 
 const Herosection = () => {
   const tl = gsap.timeline();
