@@ -22,27 +22,27 @@ export const navLinks = [
     href: "#projects",
     active: false,
   },
-  {
-    linkName: "Contact Me",
-    href: "#contact",
-    active: false,
-  },
+  // {
+  //   linkName: "Contact Me",
+  //   href: "#contact",
+  //   active: false,
+  // },
 ];
 
 export const iconsList = [
   {
     icon: FaGithub,
-    bgColor: "red",
+    bgColor: "#cc70f0",
     href: "https://github.com/Devankit-Sahu",
   },
   {
     icon: FaLinkedinIn,
-    bgColor: "blue",
+    bgColor: "#cc70f0",
     href: "https://www.linkedin.com/in/devankit-sahu/",
   },
   {
     icon: FaXTwitter,
-    bgColor: "green",
+    bgColor: "#cc70f0",
     href: "https://twitter.com/Devankit_sahu15",
   },
 ];

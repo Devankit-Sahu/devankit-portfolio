@@ -38,15 +38,23 @@ const Herosection = () => {
       },
       "a"
     );
-    tl.from(pref.current, {
-      duration: 1,
-      opacity: 0,
-    });
-    tl.from(btnref.current, {
-      scale: 0,
-      duration: 1,
-      opacity: 0,
-    });
+    tl.from(
+      pref.current,
+      {
+        duration: 1,
+        opacity: 0,
+      },
+      "a"
+    );
+    tl.from(
+      btnref.current,
+      {
+        scale: 0,
+        duration: 1,
+        opacity: 0,
+      },
+      "a"
+    );
     tl.from(
       imgref.current,
       {
@@ -67,7 +75,7 @@ const Herosection = () => {
               ref={h1ref1}
               className="text-xl xs:text-2xl sm:text-3xl text-center md:text-left"
             >
-              Hello, I am
+              Hi There, I'm
             </h1>
           </div>
           <div className="overflow-hidden my-2">
@@ -81,7 +89,7 @@ const Herosection = () => {
           <div className="overflow-hidden my-2">
             <h1
               ref={h1ref3}
-              className="text-xl xs:text-3xl sm:text-4xl font-semibold tracking-[1px] text-center md:text-left"
+              className="text-xl xs:text-3xl sm:text-4xl font-semibold tracking-[1px] text-center md:text-left text-[#cc70f0]"
             >
               Full Stack Developer
             </h1>
@@ -99,30 +107,27 @@ const Herosection = () => {
             className="download-btn my-2  xs:w-[250px] mx-auto md:mx-0"
           >
             <a
-              // download="devankit.pdf"
-              // href="/devankit.pdf"
-              href="#"
+              href="/devankit.pdf"
+              target="_blank"
               className="capitalize text-[15px] sm:text-[20px] sm:leading-[20px] md:text-[25px] md:leading-[25px]"
             >
-              download resume
+              download cv
             </a>
           </div>
         </div>
         <div className="w-full md:w-[50%] h-[50%] md:h-full flex items-center justify-center">
           <div
             ref={imgref}
-            className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-[10px] border-white"
+            className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] overflow-hidden"
           >
             <img
-              src="/hero.jpg"
+              src="/hero1.png"
               alt=""
               className="w-full h-full object-cover "
             />
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-[#0088ff50] rounded-full blur-[100px]"></div>
     </section>
   );
 };

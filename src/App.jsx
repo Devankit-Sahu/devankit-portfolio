@@ -13,6 +13,7 @@ import { IoIosMenu } from "react-icons/io";
 import MobileNavbar from "./components/MobileNavbar";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Particle from "./components/Particle";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       <main className="min-h-screen bg-[#070a29] text-white" id="main">
+        <Particle />
         <Navbar />
         <Herosection />
         <About />

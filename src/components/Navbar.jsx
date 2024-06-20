@@ -3,6 +3,15 @@ import { navLinks } from "../constants/constants";
 
 const Navbar = () => {
   const ref = useRef(null);
+
+  const scrollHandler = () => {
+    if (window.scrollY >= 10) {
+      ref.current.classList.add("fixed-nav");
+    } else {
+      ref.current.classList.remove("fixed-nav");
+    }
+  };
+
   useEffect(() => {
     const handleNavLinkClick = (event) => {
       event.preventDefault();
@@ -29,22 +38,27 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
+
   return (
-    <nav className="absolute top-0 left-0 right-0 z-10" ref={ref}>
-      <div className="container mx-auto px-10 2xl:px-40 py-5 flex justify-between items-end">
-        <h2
-          className="text-2xl md:text-4xl xl:text-5xl tracking-wide text-transparent font-black"
-          style={{
-            WebkitTextStroke: "1px white",
-          }}
+    <nav ref={ref}>
+      <div className="container mx-auto px-10 2xl:px-40 py-4 flex justify-between items-end">
+        <a
+          href="/"
+          className="text-[#c770f0] text-2xl md:text-4xl xl:text-5xl tracking-wide"
         >
-          Devankit
-        </h2>
+          Devankit.
+        </a>
         <ul className="hidden md:flex md:items-center md:gap-5">
           {navLinks.map((link) => (
             <li key={link.linkName} className="cursor-pointer">
               <a
-                className={`no-underline nav-link text-[20px] text-white tracking-[.5px] ${
+                className={`no-underline nav-link text-[20px] text-white font-medium tracking-[.5px] relative ${
                   link.active && "active"
                 }`}
                 href={link.href}

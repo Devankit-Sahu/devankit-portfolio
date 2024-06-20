@@ -6,8 +6,8 @@ const SocialIcons = () => {
   return (
     <div className="fixed z-[1] left-2 md:left-4 top-1/2 -translate-y-1/2">
       <div className="flex flex-col gap-y-5">
-        {iconsList.map((icon) => (
-          <MagneticEffect key={icon.bgColor} bgColor={icon.bgColor}>
+        {iconsList.map((icon, index) => (
+          <MagneticEffect key={index} bgColor={icon.bgColor}>
             <a
               target="_blank"
               href={icon.href}

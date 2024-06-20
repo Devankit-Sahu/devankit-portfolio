@@ -35,15 +35,17 @@ const ProjectCard = ({ project, direction }) => {
         </h3>
         <div className="flex gap-5">
           <a
-            className="border border-solid border-gray-700 px-10 py-2 rounded-3xl cursor-pointer uppercase text-xs sm:text-sm"
+            className="px-10 py-2 rounded-3xl cursor-pointer uppercase text-xs sm:text-sm bg-[#934cce5e] hover:bg-[#a24dd388]"
             href={project.github_link}
+            target="_blank"
           >
             github
           </a>
           {project.deployed_link && (
             <a
-              className="border border-solid border-gray-700 px-10 py-2 rounded-3xl cursor-pointer uppercase text-xs sm:text-sm"
+              className="px-10 py-2 rounded-3xl cursor-pointer uppercase text-xs sm:text-sm bg-[#934cce5e] hover:bg-[#a24dd388]"
               href={project.deployed_link}
+              target="_blank"
             >
               live
             </a>
