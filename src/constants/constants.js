@@ -165,10 +165,10 @@ export const projectList = [
   },
 
   {
-    name: "ChatBuddy",
+    name: "ChatEase",
     image: "/chat.png",
     github_link: "https://github.com/Devankit-Sahu/chat-frontend",
-    deployed_link: "https://chat-app-alpha-seven-93.vercel.app",
+    deployed_link: "https://chatease-seven.vercel.app",
     tech_stack: [
       {
         name: "ReactJs",
