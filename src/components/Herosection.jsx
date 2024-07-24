@@ -107,7 +107,7 @@ const Herosection = () => {
             className="download-btn my-2  xs:w-[250px] mx-auto md:mx-0"
           >
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1cSHQTj9TSRv7kpmhFRtucBkXNa1R2CWN/view"
               target="_blank"
               className="capitalize text-[15px] sm:text-[20px] sm:leading-[20px] md:text-[25px] md:leading-[25px]"
             >
