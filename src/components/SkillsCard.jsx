@@ -26,16 +26,18 @@ const SkillsCard = ({ skills, skillname, direction }) => {
   return (
     <div
       ref={cardRef}
-      className="card bg-[#4c4c4c38] sm:m-10 rounded-md border border-solid border-[#4e4e4e73] cursor-pointer hover:transform hover:-translate-y-1"
+      className="neon-border card sm:m-10 rounded-md border border-solid border-[#4e4e4e73] cursor-pointer hover:transform hover:-translate-y-1"
     >
       <h1 className="text-center uppercase py-2 font-bold">{skillname}</h1>
-      <div className="flex flex-wrap justify-evenly gap-5 p-5">
+      <div className="flex flex-wrap justify-center gap-5 p-5">
         {skills.map((s) => (
           <div
             key={s.name}
             className="flex items-center gap-2 border border-gray-700 rounded-md w-fit px-2 py-1"
           >
-            <img src={s.icon} className="w-5" />
+            <span className="text-purple-400 text-xl">
+              <s.icon />
+            </span>
             <span>{s.name}</span>
           </div>
         ))}

@@ -5,7 +5,7 @@ const Navbar = () => {
   const ref = useRef(null);
 
   const scrollHandler = () => {
-    if (window.scrollY >= 10) {
+    if (window.scrollY >= 20) {
       ref.current.classList.add("fixed-nav");
     } else {
       ref.current.classList.remove("fixed-nav");
@@ -46,12 +46,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav ref={ref}>
-      <div className="container mx-auto px-10 2xl:px-40 py-4 flex justify-between items-end">
-        <a
-          href="/"
-          className="text-[#c770f0] text-2xl md:text-4xl xl:text-5xl tracking-wide"
-        >
+    <nav ref={ref} className="fixed left-0 right-0 top-0 z-10">
+      <div className="container mx-auto px-10 2xl:px-40 py-4 flex justify-between items-center">
+        <a href="/" className="text-[#c770f0] text-3xl tracking-wide">
           Devankit.
         </a>
         <ul className="hidden md:flex md:items-center md:gap-5">

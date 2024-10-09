@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   SocialIcons,
@@ -7,28 +7,53 @@ import {
   About,
   Skillssection,
   Projectssection,
-  Contact,
+  Services,
+  Particle,
+  MobileNavbar,
 } from "./components";
 import { IoIosMenu } from "react-icons/io";
-import MobileNavbar from "./components/MobileNavbar";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Particle from "./components/Particle";
+import { FidgetSpinner } from "react-loader-spinner";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <FidgetSpinner
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="fidget-spinner-loading"
+          backgroundColor="rgb(199 112 240)"
+          ballColors={["#00ffff", "#ff00ff", "#70f0c7"]}
+        />
+      </div>
+    );
+  }
 
   return (
     <>
-      <main className="min-h-screen bg-[#070a29] text-white" id="main">
+      <main className="min-h-screen relative" id="main">
         <Particle />
         <Navbar />
         <Herosection />
         <About />
+        <Services />
         <Skillssection />
         <Projectssection />
-        {/* <Contact /> */}
       </main>
       <MagneticEffect bgColor="green">
         <div

@@ -5,7 +5,9 @@ import Herosection from "./Herosection";
 import Skillssection from "./Skillssection";
 import About from "./About";
 import Projectssection from "./Projectssection";
-import Contact from "./Contact";
+import Services from "./Services";
+import Particle from "./Particle";
+import MobileNavbar from "./MobileNavbar";
 
 export {
   Navbar,
@@ -15,5 +17,7 @@ export {
   About,
   Skillssection,
   Projectssection,
-  Contact,
+  Services,
+  Particle,
+  MobileNavbar,
 };
